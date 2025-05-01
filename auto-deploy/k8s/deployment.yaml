@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autodeployhub
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: autodeployhub
+  template:
+    metadata:
+      Labels:
+        app: autodeployhub
+  spec:
+    containers:
+      - name: flask-app
+        image: govind 
+        ports:
+        - containerPort:5000
